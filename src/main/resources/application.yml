@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: pessoa
+  data:
+    mongodb:
+      uri: mongodb://admin:admin@localhost:27017/estudos?authSource=admin
+server:
+  port: 8030

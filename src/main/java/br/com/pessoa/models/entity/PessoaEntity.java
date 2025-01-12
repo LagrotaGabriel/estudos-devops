@@ -1,18 +1,23 @@
 package br.com.pessoa.models.entity;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.util.UUID;
 
 
-@Document("pessoa")
+@Entity
+@Table(name = "TB_PESSOA")
 public class PessoaEntity {
 
     @Id
-    private String id;
+    private UUID id;
     private String nome;
     private Integer idade;
 
     public PessoaEntity(String nome, Integer idade) {
+        this.id = UUID.randomUUID();
         this.nome = nome;
         this.idade = idade;
     }
@@ -20,11 +25,11 @@ public class PessoaEntity {
     public PessoaEntity() {
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

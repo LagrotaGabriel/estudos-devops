@@ -33,7 +33,7 @@ jobs:
       run: mvn clean package
 
     - name: Docker compose build
-      working-directory: ./docker
+#      working-directory: ./docker
       run: docker compose build
 
     - name: Push do Docker hub Container Registry
